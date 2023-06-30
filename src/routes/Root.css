@@ -1,0 +1,84 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.drawer-toggle {
+  position: fixed;
+  height: 0;
+  width: 0;
+  appearance: none;
+  opacity: 0;
+}
+
+.drawer-side {
+  overflow: hidden;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: grid;
+  width: 100%;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
+  align-items: flex-start;
+  justify-items: end;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  height: 100vh;
+  height: 100dvh;
+}
+
+.drawer-toggle:checked ~ .drawer-side {
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.drawer-side > * {
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+
+.drawer-side > .drawer-overlay {
+  position: sticky;
+  top: 0;
+  place-self: stretch;
+  cursor: pointer;
+  background-color: transparent;
+  transition: background-color 0.2s cubic-bezier(0, 0, 0.58, 1);
+}
+
+.drawer-side > *:not(.drawer-overlay) {
+  transition: transform 0.2s cubic-bezier(0, 0, 0.58, 1);
+  transform: translate(100%);
+}
+
+.drawer-toggle:checked ~ .drawer-side > *:not(.drawer-overlay) {
+  transform: translate(0);
+}
+.drawer-toggle:checked ~ .drawer-side > .drawer-overlay {
+  background-color: #0006;
+}
+
+.menu {
+  height: 100vh;
+  background-color: var(--background-base);
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+  max-width: 320px;
+}
+
+.drawer-close {
+  position: absolute;
+  top: 0.3rem;
+  right: 0.5rem;
+}
+
+@media (max-width: calc(320px + 3rem)) {
+  .drawer-close:after {
+    display: inline-block;
+    content: "\00d7"; /* This will render  X' */
+  }
+}

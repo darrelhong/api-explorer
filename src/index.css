@@ -16,7 +16,6 @@
   --background-base: #334155;
   --background-button: #0284c7;
 
-
   --text-base: #fafafa;
 }
 
@@ -27,13 +26,13 @@ body {
   min-height: 100vh;
 }
 
-button {
+.btn {
   background-color: var(--background-button);
   color: var(--text-base);
+  display: inline-block;
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.5rem 1rem;
   font-size: 1.2rem;
-  font-family: inherit;
   cursor: pointer;
 }
