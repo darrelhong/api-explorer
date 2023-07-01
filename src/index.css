@@ -1,3 +1,11 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -15,6 +23,7 @@
 
   --background-base: #334155;
   --background-button: #0284c7;
+  --background-grey-900: #111827;
 
   --text-base: #fafafa;
 }

@@ -1,3 +1,4 @@
+import { ApiList } from "../components/ApiList";
 import "./Root.css";
 
 function Root() {
@@ -14,6 +15,7 @@ function Root() {
           <label htmlFor="drawer" className="drawer-overlay" />
           <div className="menu">
             <label htmlFor="drawer" className="drawer-close"></label>
+            <ApiList />
           </div>
         </div>
       </div>
