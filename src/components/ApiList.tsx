@@ -5,7 +5,6 @@ import { useMeasure } from "react-use";
 import "./ApiList.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ProviderData } from "../types/provider";
 import { useProviderQuery } from "../queries/provider";
 
 export const ApiList = () => {
