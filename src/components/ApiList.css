@@ -40,6 +40,14 @@
   background-color: var(--background-grey-900);
 }
 
+.api-list--list-item svg {
+  transition: all 0.2s ease;
+}
+
+.api-list--list-item.open svg {
+  transform: rotate(-180deg);
+}
+
 .api-list--list-item-content {
   border-radius: 0 0 0.4rem 0.4rem;
   overflow: hidden;
