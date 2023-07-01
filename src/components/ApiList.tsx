@@ -4,6 +4,9 @@ import { useMeasure } from "react-use";
 
 import "./ApiList.css";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { ProviderData } from "../types/provider";
+import { useProviderQuery } from "../queries/provider";
 
 export const ApiList = () => {
   const { isLoading, isError, data } = useQuery({
@@ -35,20 +38,11 @@ const ApiListItem = ({ provider }: { provider: string }) => {
 
   const [enableQuery, setEnableQuery] = useState(false);
 
-  const { isLoading, isError, data } = useQuery({
-    queryKey: ["providers", provider],
-    queryFn: async () => {
-      const response = await fetch(`https://api.apis.guru/v2/${provider}.json`);
-      const json = await response.json();
-      return json.apis as {
-        info: { title: string; "x-logo": { url: string } };
-      }[];
-    },
+  const { isLoading, isError, data } = useProviderQuery(provider, {
     enabled: enableQuery,
   });
 
   const [ref, stuff] = useMeasure<HTMLDivElement>();
-  console.log(stuff);
 
   return (
     <li
@@ -81,15 +75,20 @@ const ApiListItem = ({ provider }: { provider: string }) => {
           {isError && <div>An error occurred, please try again</div>}
           <ul className="provider-list--list">
             {Object.entries(data ?? {}).map(([key, value]) => (
-              <li className="provider-list--list-item" key={key}>
-                <img
-                  src={value.info["x-logo"].url}
-                  onError={(e) => {
-                    // replace with a placeholder image
-                    e.currentTarget.src = "/public/vite.svg";
-                  }}
-                />
-                {value.info.title}
+              <li key={key}>
+                <Link
+                  className="provider-list--list-item"
+                  to={`provider?api=${key}&provider=${provider}`}
+                >
+                  <img
+                    src={value.info["x-logo"].url}
+                    onError={(e) => {
+                      // replace with a placeholder image
+                      e.currentTarget.src = "/vite.svg";
+                    }}
+                  />
+                  {value.info.title}
+                </Link>
               </li>
             ))}
           </ul>

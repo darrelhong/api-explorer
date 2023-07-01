@@ -31,8 +31,13 @@ html {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
   min-height: 100vh;
+}
+
+button {
+  border: 1px solid transparent;
+  color: var(--text-base);
+  cursor: pointer;
 }
 
 .btn {
@@ -43,5 +48,5 @@ body {
   border: 1px solid transparent;
   padding: 0.5rem 1rem;
   font-size: 1.2rem;
-  cursor: pointer;
+  text-decoration: none;
 }

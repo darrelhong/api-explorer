@@ -1,0 +1,48 @@
+.provider-info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 90vh;
+  place-self: start;
+  justify-content: start;
+  align-items: center;
+}
+
+.provider-info--main {
+  flex: 1 1 auto;
+}
+
+.provider-info--title-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 1rem;
+  padding: 0 2rem;
+}
+
+.provider-info--title-row > img {
+  height: 5rem;
+}
+
+.provider-info--content {
+  display: grid;
+  justify-content: start;
+  text-align: start;
+}
+
+.provider-info--content > h2 {
+  margin: 0;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+
+.provider-info--content p {
+  margin: 0;
+  margin-bottom: 0.2rem;
+}
+
+.provider-info--contact-grid {
+  display: grid;
+  grid-template-columns: min-content auto;
+  gap: 0rem 0.5rem;
+}

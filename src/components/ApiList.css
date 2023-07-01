@@ -20,7 +20,7 @@
   text-align: start;
 }
 
-.api-list--list-item button {
+.api-list--list-item > button {
   background: none;
   border: none;
   cursor: pointer;
@@ -36,7 +36,7 @@
   transition: all 0.2s ease;
 }
 
-.api-list--list-item.open button {
+.api-list--list-item.open > button {
   background-color: var(--background-grey-900);
 }
 
@@ -60,7 +60,7 @@
   padding: 0;
   display: grid;
   gap: 0.4rem;
-  justify-items: start;
+  justify-items: stretch;
 }
 
 .provider-list--list-item {
@@ -73,4 +73,13 @@
 .provider-list--list-item img {
   /* width: 1rem; */
   height: 1rem;
+}
+
+.provider-list--list-item {
+  background: none;
+  font-size: 1rem;
+  width: 100%;
+  cursor: pointer;
+  color: var(--text-base);
+  text-decoration: none;
 }

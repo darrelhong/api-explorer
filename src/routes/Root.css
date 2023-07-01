@@ -6,7 +6,9 @@
 }
 
 .drawer {
- 
+  height: 100%;
+  display: flex;
+  place-items: center;
 }
 
 .drawer-toggle {
@@ -70,7 +72,7 @@
   max-width: 460px;
   width: 100%;
   overflow: auto;
-  height: 100%
+  height: 100%;
 }
 
 .drawer-close {
