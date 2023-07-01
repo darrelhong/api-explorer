@@ -56,6 +56,7 @@ const ApiListItem = ({ provider }: { provider: string }) => {
       onMouseEnter={() => setEnableQuery(true)}
     >
       <button onClick={() => setOpen((prev) => !prev)}>
+        <span>{provider}</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
