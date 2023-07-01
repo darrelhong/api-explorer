@@ -25,7 +25,7 @@ const ProviderInfo = () => {
             alt={providerData.info.title}
             onError={(e) => {
               // replace with a placeholder image
-              e.currentTarget.src = "/public/vite.svg";
+              e.currentTarget.src = "/api-explorer/vite.svg";
             }}
           />
           <h1>{providerData.info.title}</h1>

@@ -83,7 +83,7 @@ const ApiListItem = ({ provider }: { provider: string }) => {
                     src={value.info["x-logo"].url}
                     onError={(e) => {
                       // replace with a placeholder image
-                      e.currentTarget.src = "/vite.svg";
+                      e.currentTarget.src = "/api-explorer/vite.svg";
                     }}
                   />
                   {value.info.title}
