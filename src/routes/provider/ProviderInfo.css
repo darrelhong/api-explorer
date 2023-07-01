@@ -1,11 +1,14 @@
 .provider-info {
+  position: fixed;
   display: flex;
   flex-direction: column;
   width: 100%;
-  min-height: 90vh;
+  height: 100vh;
   place-self: start;
   justify-content: start;
   align-items: center;
+  background-color: var(--background-base);
+  padding: 2rem;
 }
 
 .provider-info--main {

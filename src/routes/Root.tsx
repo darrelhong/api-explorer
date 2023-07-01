@@ -1,5 +1,7 @@
+import { Outlet } from "react-router-dom";
 import { ApiList } from "../components/ApiList";
 import "./Root.css";
+import { createPortal } from "react-dom";
 
 function Root() {
   return (
@@ -19,6 +21,7 @@ function Root() {
           </div>
         </div>
       </div>
+      {createPortal(<Outlet />, document.body)}
     </>
   );
 }
