@@ -7,18 +7,23 @@ import Root from "./routes/Root";
 import ProviderInfo from "./routes/provider/ProviderInfo";
 import "./index.css";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <Root />,
+      children: [
+        {
+          path: "/provider",
+          element: <ProviderInfo />,
+        },
+      ],
+    },
+  ],
   {
-    path: "/",
-    element: <Root />,
-    children: [
-      {
-        path: "/provider",
-        element: <ProviderInfo />,
-      },
-    ],
-  },
-]);
+    basename: "/api-explorer",
+  }
+);
 
 const queryClient = new QueryClient();
 
